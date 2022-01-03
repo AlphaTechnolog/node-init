@@ -132,9 +132,9 @@ install_dev_dependencies () {
   else
     cmd cd "$directory"
     if [[ "$dependencies_manager" == "yarn" ]]; then
-      cmd yarn add $(echo "$dependencies" | sed 's/,/ /g') -D
+      cmd yarn add $(echo "$dev_dependencies" | sed 's/,/ /g') -D
     else
-      cmd npm install $(echo "$dependencies" | sed 's/,/ /g') -D
+      cmd npm install $(echo "$dev_dependencies" | sed 's/,/ /g') -D
     fi
     cmd cd ".."
     success "Done"
